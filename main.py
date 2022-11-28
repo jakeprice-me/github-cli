@@ -70,7 +70,7 @@ def my_issues():
                 "author",
                 "link",
             ],
-            maxcolwidths=[None, None, None, 100, None, None],
+            maxcolwidths=[None, None, None, 100, None, None, None],
         )
     )
 
