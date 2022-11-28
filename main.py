@@ -61,7 +61,15 @@ def my_issues():
     print(
         tabulate(
             sorted(issues_list_table),
-            headers=["created", "updated", "number", "title", "labels", "author", "link"],
+            headers=[
+                "created",
+                "updated",
+                "number",
+                "title",
+                "labels",
+                "author",
+                "link",
+            ],
             maxcolwidths=[None, None, None, 100, None, None],
         )
     )
