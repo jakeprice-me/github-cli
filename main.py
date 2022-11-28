@@ -45,6 +45,7 @@ def my_issues():
             updated_date = issue.updated_at.strftime("%Y-%m-%d %H:%m")
             number = issue.number
             link = issue.html_url
+            user = issue.user.name if issue.user.name else issue.user.login
             labels = ", ".join(l.name for l in issue.labels)
             issues_list_row = [
                 created_date,
@@ -52,6 +53,7 @@ def my_issues():
                 number,
                 truncated_title,
                 labels,
+                user,
                 link,
             ]
             issues_list_table.append(issues_list_row)
@@ -59,7 +61,7 @@ def my_issues():
     print(
         tabulate(
             sorted(issues_list_table),
-            headers=["created", "updated", "number", "title", "labels", "link"],
+            headers=["created", "updated", "number", "title", "labels", "author", "link"],
             maxcolwidths=[None, None, None, 100, None, None],
         )
     )
