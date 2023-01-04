@@ -45,6 +45,7 @@ def my_issues(web_table, web_list):
         issues = repo.get_issues(state="open", assignee=config_file["username"])
 
         for issue in issues:
+            repository = repo.full_name
             title = issue.title
             description = issue.body
             if description is not None:
@@ -67,6 +68,7 @@ def my_issues(web_table, web_list):
                 labels,
                 user,
                 link,
+                repository,
             ]
             issues_list_row = [
                 created_date,
@@ -111,6 +113,7 @@ def my_issues(web_table, web_list):
     </div>
     <div id="metadata">
         <ul>
+            <li>Repository: <a href="https://github.com/{issue[8]}" target="_blank">{issue[8]}</a></li>
             <li>Created: {issue[0]} - Updated: {issue[1]}</li>
             <li>Author: {issue[6]} - Updated: {issue[5]}</li>
         </ul>
