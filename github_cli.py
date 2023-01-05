@@ -84,7 +84,7 @@ def my_issues(web_table, web_list):
 
     if web_list is True:
 
-        with open("./github_issues.html", "w", encoding="utf-8") as html_list:
+        with open("./public/index.html", "w", encoding="utf-8") as html_list:
 
             html_head = f"""
 <!DOCTYPE html>
@@ -94,7 +94,8 @@ def my_issues(web_table, web_list):
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Issues</title>
-    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 </head>
 <body>
 <h1>My GitHub Issues</h1>
@@ -133,7 +134,7 @@ def my_issues(web_table, web_list):
 
     elif web_table is True:
 
-        with open("./github_issues.html", "w", encoding="utf-8") as html_view:
+        with open("./public/index.html", "w", encoding="utf-8") as html_view:
 
             html = tabulate(
                 sorted(issues_list_table),
