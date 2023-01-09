@@ -104,7 +104,7 @@ def my_issues(web_table, web_list):
 """
             html_list.write(html_head)
 
-            for issue in sorted(issues_list_table_html):
+            for issue in sorted(issues_list_table_html, reverse=True):
 
                 list_template = f"""
 <li id="block">
