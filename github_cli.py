@@ -82,6 +82,8 @@ def my_issues(web_table, web_list):
             issues_list_table.append(issues_list_row)
             issues_list_table_html.append(issues_list_row_html)
 
+            issue_count = len(issues_list_table_html)
+
     if web_list is True:
 
         with open("./public/index.html", "w", encoding="utf-8") as html_list:
@@ -93,12 +95,12 @@ def my_issues(web_table, web_list):
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Issues</title>
+    <title>My GitHub Issues ({issue_count})</title>
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 </head>
 <body>
-<h1>My GitHub Issues</h1>
+<h1>My GitHub Issues ({issue_count})</h1>
 <h2>{date_time}</h2>
 <ul>
 """
